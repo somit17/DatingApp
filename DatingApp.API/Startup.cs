@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using DatingApp.API.Context;
 using Microsoft.EntityFrameworkCore;
+using DatingApp.API.Context.IRepository;
+using DatingApp.API.Context.Repository;
 
 namespace DatingApp.API
 {
@@ -25,8 +27,9 @@ namespace DatingApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddDbContext<DataContext>(options => options.UseNpgsql(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<DataContext>(options => options.UseNpgsql(_configuration.GetConnectionString("DatabaseConnection")));
             services.AddCors();
+            services.AddScoped<IAuthRepository,AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
