@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   testDataDisplay: any;
   constructor(private test: TestService) { }
   ngOnInit(): void {
-    this.getDataTest();
+    //this.getDataTest();
   }
  
   getDataTest() {
