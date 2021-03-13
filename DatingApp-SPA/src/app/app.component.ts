@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
     //this.getDataTest();
   }
  
-  getDataTest() {
-    this.test.getData().subscribe(x => {
-      console.log(x);
+  // getDataTest() {
+  //   this.test.getData().subscribe(x => {
+  //     console.log(x);
       
-      this.testDataDisplay = x.value;
-    });
-  }
+  //     this.testDataDisplay = x.value;
+  //   });
+  // }
 }
