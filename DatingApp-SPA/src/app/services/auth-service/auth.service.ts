@@ -23,4 +23,13 @@ export class AuthService {
     );
   }
 
+  register(model: any): Observable<any> {
+    return this.http.post(this.baseURL + 'register', model)
+    .pipe(
+      map((response:any)=>{
+        return;
+      })
+    );
+  }
+
 }
