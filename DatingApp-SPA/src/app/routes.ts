@@ -4,7 +4,7 @@ import { ListsComponent } from './lists/lists.component';
 import { MembersListComponent } from './members-list/members-list.component';
 
 export const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'members', component: MembersListComponent },
   { path: 'messages', component: HomeComponent },
   { path: 'lists', component: ListsComponent },
