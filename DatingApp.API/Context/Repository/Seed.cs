@@ -9,7 +9,7 @@ namespace DatingApp.API.Context.Repository
     {
         public static void SeedUsers(DataContext context){
             if(!context.User.Any()){
-                var userData = System.IO.File.ReadAllText("Repository/UserSeedData.json");
+                var userData = System.IO.File.ReadAllText("Context/Repository/UserSeedData.json");
                 var users=JsonConvert.DeserializeObject<List<User>>(userData);
                 foreach (var user in users)
                 {
