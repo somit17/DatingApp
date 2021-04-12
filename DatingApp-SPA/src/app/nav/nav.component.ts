@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private alertify: AlertifyService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -24,7 +24,7 @@ export class NavComponent implements OnInit {
         this.alertify.success('Login Successful !');
         this.router.navigate(['/members']);
       },
-      error => {
+      (error) => {
         this.alertify.error(error);
       }
     );
@@ -37,6 +37,6 @@ export class NavComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     this.alertify.message('User Logged Out!');
-    this.router.navigate(['/members']);
+    this.router.navigate(['/']);
   }
 }
